@@ -1,4 +1,4 @@
-public class Translator {
+public class translator {
 
     private String[] morseCode
             = { // minus = 1 dot = 0
@@ -67,12 +67,12 @@ public class Translator {
     public void printResult() {
 
         System.out.println("=== RESULT ===");
-        if (option == 1) {
+        if (choice == 1) {
 
             System.out.println("Your input : " + morseCode);
             System.out.println("Morse Code :" + morseText);
 
-        } else if (option == 2) {
+        } else if (choice == 2) {
 
             System.out.println("Your morse code : " + morseText);
             System.out.println("Your message : " + plainText);
