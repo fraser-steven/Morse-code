@@ -182,13 +182,30 @@ public class Translator {
                     }
                 }
                 if (isMorse == false) {
-                    
+
                     outputPlainText += '#' + " ";
                 }
             save = "";
             }            
         }
         return outputPlainText;
+    }
+
+    public String morseToNum(String save) {
+
+        String morseToNumSTR = ' ';
+        for(int i = 0; i < save.length(); i++) {
+
+            if(save.charAt(i) == '-' || save.charAt == '_') {
+
+                morseToNumSTR += '1';
+
+            }else if(save.charAt(i) == '.' || save.charAt(i) == '*') {
+
+                morseToNumSTR += '0'
+            }
+        }
+        return morseToNumSTR;
     }
 
 }
