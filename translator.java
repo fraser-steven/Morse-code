@@ -1,5 +1,3 @@
-package java_project.morse_code_translator;
-
 public class Translator {
 
     private String[] morseCode
