@@ -80,4 +80,44 @@ public class Translator {
             System.out.println("Your message : " + plainText);
         }
     }
+
+    public void RunTranslation(String input) {
+
+        switch(choice) {
+
+            case 1:
+                plainText = input.toUpperCase()
+                morseText = Encode();
+                break;
+
+            case 2:
+                morseText = input;
+                plainText = Decode();
+                break;
+        }
+    }
+
+    private String Encode() {
+
+        String outputMorse = "";
+        for(int i = 0; i < plainText.length(); i++) {
+
+            if(((int) plainText.charAt(i) >= 65 && (int) plainText.charAt(i) <= 90)) {
+
+                outputMorse += numToMorse((int) plainText,charAt(i) - 65) + " ";
+
+            } else if ((int) plainText.charAt(i) == 32) {
+
+                outputMorse += " ";
+            } else if ((int) plainText.charAt(i) >= 48 && (int) plainText.charAt(i) <= 57) {
+
+                outputMorse += numToMorse((int) plainText.charAt(i) - 22) + " ";
+            }
+        }
+        return outputMorse;
+    }
+
+    private String numToMorse(int i) {
+        
+    }
 }
