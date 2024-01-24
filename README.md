@@ -6,6 +6,7 @@ A simple program that takes a user input and either Encodeds it into a morse cod
 
 Step 1: input your username 
 Step 2: chose to either-
+
         1. Encode a message into morse code
         2. Decode a morse code into plain text 
 
