@@ -118,6 +118,77 @@ public class Translator {
     }
 
     private String numToMorse(int i) {
-        
+
+        String numToMorseSTR = "";
+        for(int i = 0; j < morseCode[i].length(); i++) {
+
+            if(morseCode[i].charAt(i) == '1') {
+                
+                numToMorseSTR += '-';
+            } else {
+
+                numToMorseSTR += '.';
+            }
+        }
+        return numToMorseSTR;
     }
+
+    private String Decode() {
+
+        String outputPlainText = "";
+        String save = "";
+        boolean isMorse = false;
+        for (int i = 0; i < morseText.length(); i++) {
+
+            if(morseText.charAt(i) != ' ') {
+
+                save += morseText.charAt(i);
+                if(i == morseText.length() - 1){
+
+                    for (int j = 0; j < morseCode.length; j++) {
+                    if (morseToNum(save).equals(morseCode[j])) {
+
+                        if (j < 26) {
+
+                            outputPlainText += ((char) (j + 65)) + " ";
+                        } else {
+
+                            outputPlainText += ((char) (j + 10)) + " ";
+                        }
+                        isMorse = true;
+                        break;
+                    }
+                }
+                if(isMorse == false) {
+
+                    outputPlainText += '#' + " ";
+                }
+                }
+            } else {
+
+                for(int j = 0; j < morseCode.length; j++) {
+
+                    if (morseToNum(save).equals(morseCode[j])) {
+
+                        if (j < 26) {
+
+                            outputPlainText += ((char) (j + 65)) + " ";
+                        } else {
+
+                            outputPlainText += ((char) (j + 10)) + " ";
+                        }
+                        isMorse = true;
+                        break;
+                    }
+                }
+                if (isMorse == false) {
+                    
+                    outputPlainText += '#' + " ";
+                }
+            save = "";
+            }            
+        }
+        return outputPlainText;
+    }
+
 }
